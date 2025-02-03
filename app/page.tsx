@@ -1,5 +1,4 @@
 import PostList from "./components/postList";
-import TagList from "./components/tagList";
 
 import { TagsTree } from "./components/tagsTree";
 
