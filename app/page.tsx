@@ -1,6 +1,6 @@
 import PostList from "./components/postList";
 
-import { TagsTree } from "./components/tagsTree";
+import { FlowLayoutWrapper } from "./components/flowLayoutWrapper";
 
 // import "@/styles/xy-theme.css";
 import "@xyflow/react/dist/style.css";
@@ -18,7 +18,7 @@ export default function Home() {
     // </div>
     <div >
       <PostList />
-      <TagsTree />
+      <FlowLayoutWrapper />
     </div>
 
   );
