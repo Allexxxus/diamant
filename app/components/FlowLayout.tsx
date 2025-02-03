@@ -118,8 +118,6 @@ const FlowLayout: React.FC<FlowLayoutProps> = ({ initialNodes, initialEdges, sty
 
 
 
-
-
     const onEdgeDelete = useCallback(async (edge: Edge) => {
         try {
             await deleteTagRelationshipAction({
@@ -133,9 +131,9 @@ const FlowLayout: React.FC<FlowLayoutProps> = ({ initialNodes, initialEdges, sty
         }
     }, []);
 
-    const onReconnectEnd = useCallback((_: any, edge: Edge) => {
+    const onReconnectEnd = useCallback((event: MouseEvent | TouchEvent, edge: Edge) => {
         if (!edgeReconnectSuccessful.current) {
-            onEdgeDelete(edge)
+            onEdgeDelete(edge);
             setEdges((eds) => eds.filter((e) => e.id !== edge.id));
         }
 
