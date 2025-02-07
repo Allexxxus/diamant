@@ -1,0 +1,50 @@
+/* components/Navigation.module.css */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #dfe2ff; /* Or any color you prefer */
+    color: #333; /* Or any color you prefer */
+    padding: 0.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Optional: Add a shadow */
+    z-index: 1000; /* Ensure it stays on top */
+  }
+  
+  .left {
+    display: flex;
+    /* align-items: center; */
+  }
+  
+  .logoContainer {
+    display: flex;
+  }
+  
+  .logo {
+    margin-right: 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .right {
+    display: flex;
+    gap: 1.5rem; /* Adjust the spacing between links */
+  }
+  
+  .link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .link:hover {
+    color: #0070f3; /* Change to your preferred hover color */
+  }

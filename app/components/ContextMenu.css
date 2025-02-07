@@ -1,0 +1,99 @@
+.context-menu {
+    position: fixed;
+    padding: 5px;
+    z-index: 9999;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border: lightgray solid 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .context-menu p {
+    margin: 0.5em;
+  }
+  
+  .context-menu button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #eee; /* Or your default button background color */
+    color: black; /* Or your default button text color */
+    margin-bottom: 5px; /* Add some spacing between buttons if needed */
+  }
+  
+  .context-menu button:hover {
+    background-color: #ddd; /* Or your hover background color */
+    color: black;
+  }
+  
+  /* Modal Styles (You can move these as well, if you want a separate Modal.css) */
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border: lightgray solid 1px;
+    border-radius: 5px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .modal h2 {
+    margin-top: 0; /* Reset default heading margin */
+  }
+  
+  .modal label {
+    margin-bottom: 5px;
+  }
+  
+  .modal input[type="text"] {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+  
+  .modal button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .modal-buttons {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      justify-content: flex-end; /* Aligns buttons to the right */
+  }
+  
+  .modal-buttons button:first-child {
+      background-color: #4CAF50;
+      color: white;
+  }
+  
+  .modal-buttons button:last-child {
+      background-color: #f44336;
+      color: white;
+  }
+  
+  .modal ul {
+      list-style-type: none;
+      padding: 0;
+  }
+  
+  .modal li {
+      margin-bottom: 5px;
+  }
+  
+  .modal p {
+      margin-bottom: 10px;
+  }

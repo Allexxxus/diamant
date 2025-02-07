@@ -1,0 +1,7 @@
+/* NotesGrid Component Styles */
+.notesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 1.5rem; /* Spacing between grid items */
+    padding: 1rem;
+  }

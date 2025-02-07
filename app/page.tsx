@@ -17,7 +17,6 @@ export default function Home() {
     //   {/* <TagList />
     // </div>
     <div >
-      <PostList />
       <FlowLayoutWrapper />
     </div>
 

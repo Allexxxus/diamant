@@ -1,0 +1,27 @@
+.noteContainer {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem; /* Spacing between notes */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .noteTitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .noteTags {
+    display: flex; /* Horizontal alignment for tags */
+    flex-wrap: wrap; /* Allow tags to wrap to the next line */
+    gap: 0.5rem;   /* Spacing between tags */
+    align-items: center;
+  }
+  
+  .noteTag {
+    background-color: #e0e0e0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    color: #555;
+  }
