@@ -113,9 +113,7 @@ const useEdgeManagement = (setEdges: any) => {
     const onEdgeDelete = useCallback(async (edge: Edge) => {
         try {
             await deleteTagRelationshipAction({
-                source: edge.source, target: edge.target,
-                sourceHandle: null,
-                targetHandle: null
+                source: edge.source, target: edge.target
             })
         }
         catch (error) {
