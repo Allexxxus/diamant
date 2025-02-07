@@ -1,4 +1,3 @@
-// contextMenu.tsx
 import React, { useCallback, useState } from 'react';
 import { createPost, getPostsByTag } from '@/utils/post-service';
 import './ContextMenu.css';
@@ -28,7 +27,7 @@ export default function ContextMenu({
     const [tagName, setTagName] = useState('');
     const [posts, setPosts] = useState<{ id: string; title: string; }[]>([]);
 
-    const handleOpenAddPostModal = useCallback((event) => {
+    const handleOpenAddPostModal = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
         setIsAddPostModalOpen(true);
     }, []);
@@ -38,7 +37,7 @@ export default function ContextMenu({
         setPostTitle('');
     }, []);
 
-    const handleTitleChange = useCallback((e) => {
+    const handleTitleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setPostTitle(e.target.value);
     }, []);
 
@@ -53,7 +52,7 @@ export default function ContextMenu({
         }
     }, [postTitle, id, handleCloseAddPostModal]);
 
-    const handleOpenViewPostsModal = useCallback(async (event) => {
+    const handleOpenViewPostsModal = useCallback(async (event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
         setIsViewPostsModalOpen(true);
         try {
@@ -71,7 +70,7 @@ export default function ContextMenu({
     }, []);
 
     // New functions for adding tag
-    const handleOpenAddTagModal = useCallback((event) => {
+    const handleOpenAddTagModal = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
         setIsAddTagModalOpen(true);
     }, []);
@@ -81,7 +80,7 @@ export default function ContextMenu({
         setTagName('');
     }, []);
 
-    const handleTagNameChange = useCallback((e) => {
+    const handleTagNameChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setTagName(e.target.value);
     }, []);
 
@@ -166,126 +165,3 @@ export default function ContextMenu({
         </>
     );
 }
-
-// import React, { useCallback, useState } from 'react';
-// import { createPost } from '@/utils/post-service';
-// import { getPostsByTag } from '@/utils/post-service';
-// import './ContextMenu.css'; // Import the CSS file
-
-// interface ContextMenuProps {
-//     id: string;
-//     top: number;
-//     left: number;
-//     right?: number;
-//     bottom?: number;
-//     onClick: () => void;
-// }
-
-// export default function ContextMenu({
-//     id, // id of the given tag
-//     top,
-//     left,
-//     right,
-//     bottom,
-//     onClick,
-// }: ContextMenuProps) {
-//     const [isAddPostModalOpen, setIsAddPostModalOpen] = useState(false);
-//     const [isViewPostsModalOpen, setIsViewPostsModalOpen] = useState(false);
-//     const [postTitle, setPostTitle] = useState('');
-//     const [posts, setPosts] = useState([]);
-
-//     const handleOpenAddPostModal = useCallback((event) => {
-//       event.stopPropagation();
-//       setIsAddPostModalOpen(true);
-//     }, []);
-
-//     const handleCloseAddPostModal = useCallback(() => {
-//         setIsAddPostModalOpen(false);
-//         setPostTitle('');
-//     }, []);
-
-//     const handleTitleChange = useCallback((e) => {
-//         setPostTitle(e.target.value);
-//     }, []);
-
-//     const handleAddPost = useCallback(async () => {
-//         try {
-//             await createPost(postTitle, id);
-//             console.log(`Post added to node ${id} with title: ${postTitle}`);
-//             handleCloseAddPostModal();
-//         } catch (error) {
-//             console.error("Failed to create post", error);
-//             alert("Failed to create post. Please try again.");
-//         }
-//     }, [postTitle, id, handleCloseAddPostModal]);
-
-
-//     const handleOpenViewPostsModal = useCallback(async (event) => {
-//         event.stopPropagation();
-//         setIsViewPostsModalOpen(true);
-//         try {
-//             const postsData = await getPostsByTag(id);
-//             setPosts(postsData);
-//         } catch (error) {
-//             console.error("Failed to fetch posts", error);
-//             alert("Failed to fetch posts. Please try again.");
-//             setIsViewPostsModalOpen(false);
-//         }
-//     }, [id]);
-
-//     const handleCloseViewPostsModal = useCallback(() => {
-//         setIsViewPostsModalOpen(false);
-//     }, []);
-
-//     return (
-//         <>
-//             <div
-//                 className="context-menu"
-//                 style={{
-//                     top, left, right, bottom, // Keep position-related styles
-//                 }}
-//                 onClick={onClick}
-//             >
-//                 <p>
-//                     <small>node: {id}</small>
-//                 </p>
-//                 <button onClick={handleOpenAddPostModal}>Add Post</button>
-//                 <button onClick={handleOpenViewPostsModal}>Show All Posts</button>
-//             </div>
-
-//             {isAddPostModalOpen && (
-//                 <div className="modal">
-//                     <h2>Add New Post</h2>
-//                     <label htmlFor="postTitle">Post Title:</label>
-//                     <input
-//                         type="text"
-//                         id="postTitle"
-//                         value={postTitle}
-//                         onChange={handleTitleChange}
-//                     />
-//                     <div className="modal-buttons">
-//                         <button onClick={handleAddPost}>Add Post</button>
-//                         <button onClick={handleCloseAddPostModal}>Cancel</button>
-//                     </div>
-//                 </div>
-//             )}
-
-//             {isViewPostsModalOpen && (
-//                 <div className="modal" style={{maxHeight: '80vh', overflowY: 'auto'}}>
-//                     <h2>Posts with Tag: {id}</h2>
-//                     {posts.length > 0 ? (
-//                         <ul>
-//                             {posts.map((post) => (
-//                                 <li key={post.id}>{post.title}</li>
-//                             ))}
-//                         </ul>
-//                     ) : (
-//                         <p>No posts found for this tag.</p>
-//                     )}
-//                     <button onClick={handleCloseViewPostsModal}>Close</button>
-//                 </div>
-//             )}
-//         </>
-//     );
-// }
-
