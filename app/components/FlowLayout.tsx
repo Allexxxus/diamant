@@ -21,6 +21,7 @@ import { createTagRelationshipAction, deleteTagRelationshipAction } from '@/util
 import { createPost } from '@/utils/post-service';
 import ContextMenu from './contextMenu';
 import { EdgeBase } from '@xyflow/system';
+import AddPost from './addPost';
 
 const dagreGraph = new dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({}));
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './note.module.css';
+import DeleteButton from './DeleteButton';
 
 interface Tag {
   id: string;
@@ -23,6 +24,10 @@ const Note: React.FC<NoteProps> = ({ id, title, tagsData }) => {
               {tag.name}
             </span>
           ))}
+      </div>
+      <div className={styles.toolbar}>
+        Edit
+        <DeleteButton postId={id} />
       </div>
     </div>
   );

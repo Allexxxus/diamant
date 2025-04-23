@@ -17,7 +17,7 @@ const Navigation = () => {
         >
           <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z" />
         </svg>
-        <div className={styles.title}>Your Awesome Site</div>
+        <div className={styles.title}>Diamant</div>
       </Link>
 
 

@@ -1,0 +1,8 @@
+{
+    "workbench.settings.editor": "ui",
+        "workbench.colorCustomizations": {
+    "statusBar.background" : "#01a056",
+    "statusBar.noFolderBackground" : "#212121",
+    "statusBar.debuggingBackground": "#263238"
+}
+}

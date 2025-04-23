@@ -1,7 +1,12 @@
 /* NotesGrid Component Styles */
 .notesGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-    gap: 1.5rem; /* Spacing between grid items */
-    padding: 1rem;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.5rem;
+  padding: 1rem;
+  grid-auto-rows: 300px; /* Set a fixed height for rows */
+}
+
+.notesGrid > * { /* Target direct children (grid items) */
+  overflow: hidden;
+}

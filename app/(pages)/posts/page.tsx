@@ -1,9 +1,17 @@
-import PostList from "@/app/components/postList";
+import Filter from "@/app/components/filter";
+import PostsList from "@/app/postsList";
+import { getInitialData } from "@/utils/service";
 
-export default function Page() {
+
+export default async function PostsPage() {
+  const { posts, tags } = await getInitialData();
+
   return (
     <div>
-      <PostList />
+
+      <PostsList posts={posts} tags={tags}/>
     </div>
-  )
+  );
 }
+
+

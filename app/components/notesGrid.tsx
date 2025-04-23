@@ -5,7 +5,7 @@ import styles from './noteGrid.module.css';
 interface NoteType {
   id: string;
   title: string;
-  tags: {  id: string, name: string;}[]; // Or define a more specific type for your tags
+  tags: { id: string, name: string }[];
 }
 
 interface NotesGridProps {
@@ -17,8 +17,6 @@ const NotesGrid: React.FC<NotesGridProps> = ({ notes }) => {
     <div className={styles.notesGrid}>
       {notes &&
         notes.map((note: NoteType) => {
-          console.log(note);
-
           return <Note key={note.id} id={note.id} title={note.title} tagsData={note.tags} />;
         })}
     </div>

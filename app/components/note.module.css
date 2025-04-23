@@ -1,9 +1,12 @@
 .noteContainer {
     border: 1px solid #ccc;
     padding: 1rem;
-    margin-bottom: 1rem; /* Spacing between notes */
     border-radius: 5px;
     background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Fallback for older browsers */
+    min-height: 150px; /* Optional: set minimum height for better visibility */
   }
   
   .noteTitle {
@@ -24,4 +27,19 @@
     border-radius: 3px;
     font-size: 0.8rem;
     color: #555;
+    margin-right: 5px;
   }
+
+  .toolbar {
+    border-top: 1px solid #ccc;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-bottom: -1rem;
+    margin-top: auto; /* Pushes toolbar to bottom in flex container */
+    padding-top: 0.5rem; /* Add spacing between content and toolbar */
+    padding-right: 5px;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: flex-end; /* Aligns children to the right */
+    gap: 0.5rem; /* Optional: adds spacing between toolbar items */
+}

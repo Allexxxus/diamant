@@ -1,6 +1,7 @@
 // flowLayoutWrapper.tsx
 import fetchTagsTree from "@/utils/fetchTagsTree-utils";
 import FlowLayout from "./FlowLayout";
+import TagsField from "./tagsField";
 
 export async function FlowLayoutWrapper() {
     const data = await fetchTagsTree();
@@ -9,6 +10,7 @@ export async function FlowLayoutWrapper() {
 
     return (
         <div style={{ width: "100vw", height: "100vh" }}>
+
             <FlowLayout
                 initialNodes={initialNodes}
                 initialEdges={initialEdges}
